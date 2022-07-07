@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4905609645356143203}
   - component: {fileID: 4905609645356143200}
   - component: {fileID: 4905609645356143207}
-  - component: {fileID: 1289587556543155553}
   - component: {fileID: 4090272512748709741}
   m_Layer: 0
-  m_Name: collectible (1)
+  m_Name: secoondMember2
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,23 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1289587556543155553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905609645356143201}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75be551e3f1383b44a87233de48f0813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  memberBoxes:
-  - {fileID: 4905609646279042352}
-  multiplierType: 2
-  amountToShoot: 2
-  location: 1
 --- !u!114 &4090272512748709741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: 1
-  multiplierBox: {fileID: 0}
-  otherMember: {fileID: 4905609646279042352}
+  secondMember: {fileID: 4905609646279042352}
+  thirdMember: {fileID: 0}
   isActive: 0
 --- !u!1 &4905609646121894637
 GameObject:
@@ -158,7 +140,6 @@ GameObject:
   - component: {fileID: 4905609646121894636}
   - component: {fileID: 4905609646121894624}
   - component: {fileID: 4905609646121894625}
-  - component: {fileID: 4905609646121894638}
   - component: {fileID: 4905609646121894639}
   m_Layer: 0
   m_Name: 2x
@@ -232,19 +213,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4905609646121894638
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905609646121894637}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4905609646121894639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +230,6 @@ MonoBehaviour:
   - {fileID: 4905609645356143201}
   multiplierType: 2
   amountToShoot: 2
-  location: 0
 --- !u!1 &4905609646279042352
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,10 +243,9 @@ GameObject:
   - component: {fileID: 4905609646279042354}
   - component: {fileID: 4905609646279042355}
   - component: {fileID: 4905609646279042358}
-  - component: {fileID: 3073087001517755811}
   - component: {fileID: 7558151491179371729}
   m_Layer: 0
-  m_Name: collectible
+  m_Name: firstMember2
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,23 +343,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3073087001517755811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905609646279042352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75be551e3f1383b44a87233de48f0813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  memberBoxes:
-  - {fileID: 4905609645356143201}
-  multiplierType: 2
-  amountToShoot: 2
-  location: 0
 --- !u!114 &7558151491179371729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: 0
-  multiplierBox: {fileID: 0}
-  otherMember: {fileID: 4905609645356143201}
+  secondMember: {fileID: 4905609645356143201}
+  thirdMember: {fileID: 0}
   isActive: 0

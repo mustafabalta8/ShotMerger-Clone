@@ -7,23 +7,26 @@ public class BoxMember : MonoBehaviour
     [SerializeField] private Location location;
 
     public Location Location { get => location; }
-    public GameObject OtherMember { get => otherMember; set => otherMember = value; }
+    public GameObject SecondMember { get => secondMember; set => secondMember = value; }
+    public GameObject ThirdMember { get => thirdMember; set => thirdMember = value; }
 
-    [SerializeField] private MultiplierBox multiplierBox;
+    private MultiplierBox multiplierBox;
 
-    [SerializeField] GameObject otherMember;
-
+    [SerializeField] private GameObject secondMember;
+    [SerializeField] private GameObject thirdMember = null;
     private void Start()
     {
         multiplierBox = transform.parent.gameObject.GetComponent<MultiplierBox>();
     }
 
-    public void SetPosition()
+    public void SetPosition()// NOT IN USE
     {
-        otherMember.AddComponent<BoxCollector>();
-        otherMember.tag = "Colon";
+        secondMember.AddComponent<BoxCollector>();
+        secondMember.tag = "Colon";
         gameObject.AddComponent<BoxCollector>();
         multiplierBox.transform.parent = PlayerController.instance.ColonParent;
+
+
         if (Location == Location.Left)
         {
             multiplierBox.gameObject.transform.position += new Vector3(.5f, 0, 1f);  

@@ -13,10 +13,6 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Colon")]
     [SerializeField] private Transform colonParent;
 
-    void Start()
-    {
-        //StartCoroutine(Shoot());
-    }
     [Header("Shooting")]
     [SerializeField] private float shootSpeed=1;
     private float shootTime = 0;
@@ -25,21 +21,9 @@ public class PlayerController : Singleton<PlayerController>
 
     void Update()
     {
-
-
         MoveForward();
         HandleSideMove();
         //HandleShooting();
-    }
-
-    private void HandleShooting()
-    {
-        shootTime += Time.deltaTime;
-        if (shootTime > shootSpeed)
-        {
-            Shoot2();
-            shootTime = 0;
-        }
     }
 
     private void MoveForward()
@@ -59,23 +43,5 @@ public class PlayerController : Singleton<PlayerController>
         transform.position = currentPos;//Mathf.SmoothDamp??
 
     }
-    private IEnumerator Shoot()
-    {
-        while(GameManager.GameState == GameStates.InGame)
-        {
-            GameObject newBullet = ObjectPooler.instance.GetPooledObject();
-            //newBullet.transform.position = bulletPoint1.position;
-            newBullet.SetActive(true);
-            yield return new WaitForSeconds(shootSpeed);
-        }       
-    }
-    private void Shoot2()
-    {
-            GameObject newBullet = ObjectPooler.instance.GetPooledObject();
-            //newBullet.transform.position = bulletPoint1.position;
-            newBullet.SetActive(true);
-            
-    }
-
-
+    
 }

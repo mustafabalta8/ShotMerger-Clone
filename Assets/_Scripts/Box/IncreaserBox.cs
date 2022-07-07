@@ -11,11 +11,8 @@ public class IncreaserBox : MonoBehaviour
 
     private float shootTime = 0;
 
-    private void Update()
-    {
-        if(gameObject.tag=="Colon")
-        HandleShooting();
-    }
+    public int AmountToIncrease { get => amountToIncrease; set => amountToIncrease = value; }
+
     private void HandleShooting()
     {
         shootTime += Time.deltaTime;
