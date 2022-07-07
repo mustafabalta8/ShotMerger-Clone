@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102416799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7858982557418465285, guid: ac882b5c742c9ca4d92d04dd75060e28, type: 3}
+  m_PrefabInstance: {fileID: 2320753298412434821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &102416802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102416799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51d7079722ab946a82715ae0507ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToShoot: 1
 --- !u!1 &119009627
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: +1Box (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038857863075199070, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -733,6 +755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 4905609646121894625, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4905609646121894636, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -799,6 +825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 5408832903242054723, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5408832903242054734, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -964,6 +994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: +1Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038857863075199070, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1078,6 +1112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 4905609646121894625, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4905609646121894636, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1619,6 +1657,10 @@ PrefabInstance:
     - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_Name
       value: +1Box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038857863075199070, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_RootOrder
@@ -2588,6 +2630,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 4905609646121894625, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4905609646121894636, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2877,6 +2923,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colon: 1
+  amountToShoot: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  amountToShootMinus: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  amountToMultiply: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  amountToMultiplyMinus: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  totalAmounts: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  totalAmountsMinus: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1351488772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,6 +3293,10 @@ PrefabInstance:
     - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_Name
       value: +1Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038857863075199070, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_RootOrder
@@ -3821,6 +3877,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 5408832903242054723, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5408832903242054734, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4814,6 +4874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: +1Box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4038857863075199066, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038857863075199070, guid: 0acf80734b5f2424fb3e07430efedc82, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5187,6 +5251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 5408832903242054723, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5408832903242054734, guid: 4256bf3151b5bd847a84efce537b4461, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5442,6 +5510,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417142860}
     m_Modifications:
+    - target: {fileID: 4905609646121894625, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4905609646121894636, guid: 1f759308d4ea39247bc50ac054412670, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5555,6 +5627,10 @@ PrefabInstance:
     - target: {fileID: 8138731815583926378, guid: 4e89d46fa7ddc5d4cb3916061bf58b74, type: 3}
       propertyPath: m_Name
       value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138731815619486311, guid: 4e89d46fa7ddc5d4cb3916061bf58b74, type: 3}
+      propertyPath: amountToPool
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8138731815903499564, guid: 4e89d46fa7ddc5d4cb3916061bf58b74, type: 3}
       propertyPath: hand

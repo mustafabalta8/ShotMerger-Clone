@@ -9,18 +9,26 @@ public class ColonManager : Singleton<ColonManager>
     private BoxCollector[] collectors;
     private int totalAmountPerSecond;
 
-    private int[] amountToShoot = new int[10];
-    private int[] amountToShootMinus = new int[10];
+    [SerializeField] private int[] amountToShoot = new int[10];
+    [SerializeField] private int[] amountToShootMinus = new int[10];
 
-    private int[] amountToMultiply = new int [10];
-    private int[] amountToMultiplyMinus = new int[10];
+    [SerializeField] private int[] amountToMultiply = new int [10];
+    [SerializeField] private int[] amountToMultiplyMinus = new int[10];
 
-    private int[] totalAmounts = new int[10];
-    private int[] totalAmountsMinus = new int[10];
+    [SerializeField] private int[] totalAmounts = new int[10];
+    [SerializeField] private int[] totalAmountsMinus = new int[10];
 
     private void Start()
     {
-        for(int i=0;i<amountToMultiply.Length;i++)
+        for (int i = 0; i < amountToShoot.Length; i++)
+        {
+            amountToShoot[i] = 1;
+        }
+        for (int i = 0; i < amountToShootMinus.Length; i++)
+        {
+            amountToShootMinus[i] = 1;
+        }
+        for (int i=0;i<amountToMultiply.Length;i++)
         {
             amountToMultiply[i] = 1;
         }
@@ -91,6 +99,7 @@ public class ColonManager : Singleton<ColonManager>
     }
     private void UpdateLeftColonsShootInfo(int colonIndex, int additionToAmount, int additionToMultipliers)
     {
+        //AmountToMultiplyMinus 0'ýncý index kullanýlmýyor
         colonIndex = Mathf.Abs(colonIndex);
         AmountToMultiplyMinus[colonIndex] *= additionToMultipliers;
         amountToShootMinus[colonIndex] += additionToAmount;

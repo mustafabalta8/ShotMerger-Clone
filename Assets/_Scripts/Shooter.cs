@@ -43,12 +43,12 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator Shoot2()
     {
-        while (GameManager.GameState == GameStates.InGame)
+        while (true)//GameManager.GameState == GameStates.InGame
         {
             GameObject newBullet = ObjectPooler.instance.GetPooledObject();
             newBullet.transform.position = transform.position;
             newBullet.SetActive(true);
-            yield return new WaitForSeconds(1/amountToShoot);
+            yield return new WaitForSeconds(1f/amountToShoot);
         }
     }
     

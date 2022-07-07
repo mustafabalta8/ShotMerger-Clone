@@ -39,28 +39,24 @@ public class MultiplierBox : MonoBehaviour
             if(location == Location.Left)
             {
                 //middle boxColon + 1
-                SetNewBoxToPlayer(boxColon +1);
+                SetNewBoxToPlayer(boxColon + 1, 1);
                 //right boxColon + 2
-                memberBoxes[2].GetComponent<BoxCollector>().BoxColon = boxColon + 2;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon + 2, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon + 2, 2);
             }
             else if (location == Location.Middle)
             {
                 //left
-                memberBoxes[0].GetComponent<BoxCollector>().BoxColon = boxColon - 1;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon - 1, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon -1, 0);
                 //right
-                memberBoxes[2].GetComponent<BoxCollector>().BoxColon = boxColon + 1;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon + 1, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon +1, 2);
             }
             else//Right
             {
                 //left
-                memberBoxes[0].GetComponent<BoxCollector>().BoxColon = boxColon - 2;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon - 2, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon -2, 0);
                 //middle
-                memberBoxes[1].GetComponent<BoxCollector>().BoxColon = boxColon - 1;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon - 1, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon -1, 1);
+
             }
         }
         else
@@ -68,36 +64,48 @@ public class MultiplierBox : MonoBehaviour
             if (location == Location.Left)
             {
                 //right
-                memberBoxes[1].GetComponent<BoxCollector>().BoxColon = boxColon + 1;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon + 1, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon +1, 1);
+                //memberBoxes[1].GetComponent<BoxCollector>().BoxColon = boxColon + 1;
+                //ColonManager.instance.UpdateAmountPerSeconds(boxColon + 1, 1, multiplierType);
             }
             else// location right
             {
                 //left
-                memberBoxes[0].GetComponent<BoxCollector>().BoxColon = boxColon - 1;
-                ColonManager.instance.UpdateAmountPerSeconds(boxColon - 1, 1, multiplierType);
+                SetNewBoxToPlayer(boxColon -1, 0);
             }
         }
-
-        if (location == Location.Left)
-            transform.position = transform.position + new Vector3(0.5f, 0, 0);
-        else if (location == Location.Right)
+        //if (!tripleBox)
+        //{
+            if (location == Location.Left)
+                transform.position = transform.position + new Vector3(0.5f, 0, 0);
+            else if (location == Location.Right)
+            {
+                transform.position = transform.position + new Vector3(-0.5f, 0, 0);
+            }
+        /*}
+        else
         {
-            transform.position = transform.position + new Vector3(-0.5f, 0, 0);
-        }
+            if (location == Location.Left)
+                transform.position = transform.position + new Vector3(1f, 0, 0);
+            else if (location == Location.Right)
+            {
+                transform.position = transform.position + new Vector3(-1f, 0, 0);
+            }
+        }*/
+            
     }
 
-    private void SetNewBoxToPlayer(int boxColon)
+    private void SetNewBoxToPlayer(int boxColon, int memberIndex)
     {
-        memberBoxes[1].GetComponent<BoxCollector>().BoxColon = boxColon;
+        memberBoxes[memberIndex].GetComponent<BoxCollector>().BoxColon = boxColon;
         ColonManager.instance.UpdateAmountPerSeconds(boxColon, 1, multiplierType);
 
-        Shooter newShooter = memberBoxes[1].gameObject.AddComponent<Shooter>();
+        Shooter newShooter = memberBoxes[memberIndex].gameObject.AddComponent<Shooter>();
         if (boxColon >= 0)
             newShooter.SetAmountToShoot(ColonManager.instance.TotalAmounts[boxColon]);
         else
         {
-            newShooter.SetAmountToShoot(ColonManager.instance.TotalAmountsMinus[-(boxColon)]);
+            newShooter.SetAmountToShoot(ColonManager.instance.TotalAmountsMinus[-boxColon]);
         }
     }
 
