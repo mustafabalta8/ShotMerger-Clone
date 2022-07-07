@@ -9,6 +9,11 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private float lerpValue;
 
+    private void Start()
+    {
+        offset =  transform.position - target.transform.position;
+    }
+
     private void LateUpdate()
     {
         MoveCamera();

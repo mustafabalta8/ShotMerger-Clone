@@ -85,9 +85,6 @@ public class ColonManager : Singleton<ColonManager>
                 UpdateLeftColonsShootInfo(colonIndex, additionToAmount, additionToMultipliers);
                 break;
         }
-
-
-
     }
 
     private void UpdateColonShootInfo(int colonIndex, int additionToAmount, int additionToMultipliers)
@@ -96,6 +93,9 @@ public class ColonManager : Singleton<ColonManager>
         amountToShoot[colonIndex] += additionToAmount;
         totalAmounts[colonIndex] = amountToShoot[colonIndex] * amountToMultiply[colonIndex];
         print(colonIndex + ": " + totalAmounts[colonIndex]);
+        CalculateTotalAmountPerSecond();
+
+
     }
     private void UpdateLeftColonsShootInfo(int colonIndex, int additionToAmount, int additionToMultipliers)
     {
@@ -105,5 +105,26 @@ public class ColonManager : Singleton<ColonManager>
         amountToShootMinus[colonIndex] += additionToAmount;
         totalAmountsMinus[colonIndex] = amountToShoot[colonIndex] * amountToMultiply[colonIndex];
         print(-colonIndex + ": " + totalAmounts[colonIndex]);
+        CalculateTotalAmountPerSecond();
     }
+   // float totalAmount;
+    private void CalculateTotalAmountPerSecond()
+    {
+        int temp=0;
+        for(int i = 0; i < totalAmounts.Length; i++)
+        {
+            if (totalAmounts[i] != 1)
+            {
+                temp += totalAmounts[i];
+            }
+            if (totalAmountsMinus[i] != 1)
+            {
+                temp += totalAmountsMinus[i];
+            }
+        }
+
+        UIManager.instance.UpdateAmountPerSecondText(temp);
+    }
+
+
 }

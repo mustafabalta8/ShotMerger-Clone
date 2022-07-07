@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Colon
   - Box
+  - Bullet
   layers:
   - Default
   - TransparentFX

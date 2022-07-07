@@ -33,7 +33,6 @@ public class PlayerController : Singleton<PlayerController>
     }
     private void HandleSideMove()
     {
-
         float swerveAmount = swerveSpeed * InputManager.instance.MoveFactorX * Time.deltaTime;
 
         var currentPos = transform.position;
@@ -41,7 +40,6 @@ public class PlayerController : Singleton<PlayerController>
         currentPos.x = Mathf.Clamp(currentPos.x, -sideMovementLimit, sideMovementLimit);
 
         transform.position = currentPos;//Mathf.SmoothDamp??
-
     }
     
 }
