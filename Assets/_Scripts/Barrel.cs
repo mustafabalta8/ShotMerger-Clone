@@ -17,5 +17,9 @@ public class Barrel : MonoBehaviour
                 transform.parent.gameObject.SetActive(false);
             }
         }
+        if (other.tag == "Colon")
+        {
+            GameManager.instance.RestartGame();
+        }
     }
 }

@@ -6,19 +6,11 @@ public class MultiplierBox : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] memberBoxes;
-    [Header("Shooting")]
+
     [SerializeField] private int multiplierType = 2;
     [SerializeField] protected float amountToShoot = 1;
-    protected float shootTime = 0;
 
-    private void Update()
-    {
-        /*if (gameObject.tag == "Colon")
-        foreach (var member in memberBoxes)
-        {
-            HandleShooting(member.transform);
-        }*/      
-    }
+
     private bool tripleBox = false;
     public void Set(Location location, int boxColon, int totalAmountToShoot)
     {
@@ -65,8 +57,6 @@ public class MultiplierBox : MonoBehaviour
             {
                 //right
                 SetNewBoxToPlayer(boxColon +1, 1);
-                //memberBoxes[1].GetComponent<BoxCollector>().BoxColon = boxColon + 1;
-                //ColonManager.instance.UpdateAmountPerSeconds(boxColon + 1, 1, multiplierType);
             }
             else// location right
             {
@@ -109,31 +99,6 @@ public class MultiplierBox : MonoBehaviour
         }
     }
 
-    protected void HandleShooting(Transform member)
-    {
-        shootTime += Time.deltaTime;
-        if (shootTime > 1f / amountToShoot)
-        {
-            Shoot(member);
-            shootTime = 0;
-        }
-    }
-    protected void Shoot(Transform member)
-    {
-        GameObject newBullet = ObjectPooler.instance.GetPooledObject();
-        newBullet.transform.position = member.transform.position;
-        newBullet.SetActive(true);
-
-    }
-    public IEnumerator Shoot2()
-    {
-        while (GameManager.GameState == GameStates.InGame)
-        {
-            GameObject newBullet = ObjectPooler.instance.GetPooledObject();
-            //newBullet.transform.position = bulletPoint1.position;
-            newBullet.SetActive(true);
-            yield return new WaitForSeconds(1f / amountToShoot);
-        }
-    }
+    
 }
 

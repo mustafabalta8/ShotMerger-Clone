@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Singleton<PlayerController>
+public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [Header("Movement")]
     [SerializeField] private Vector3 movementDirection;
     [SerializeField] private float forwardSpeed;
@@ -12,18 +14,20 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Colon")]
     [SerializeField] private Transform colonParent;
-
-    [Header("Shooting")]
-    [SerializeField] private float shootSpeed=1;
-    private float shootTime = 0;
-
     public Transform ColonParent { get => colonParent; }
 
+    private void Start()
+    {
+        instance = this;
+    }
     void Update()
     {
-        MoveForward();
-        HandleSideMove();
-        //HandleShooting();
+        if (GameManager.GameState == GameStates.InGame)
+        {
+            MoveForward();
+            HandleSideMove();
+        }
+
     }
 
     private void MoveForward()
