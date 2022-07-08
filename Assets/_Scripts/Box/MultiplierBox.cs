@@ -14,7 +14,7 @@ public class MultiplierBox : MonoBehaviour
     private bool tripleBox = false;
     public void Set(Location location, int boxColon, int totalAmountToShoot)
     {
-        gameObject.tag = "Colon";
+        //gameObject.tag = "Colon";
         //gameObject.AddComponent<BoxCollector>();
         transform.parent = PlayerController.instance.ColonParent;
         foreach (var member in memberBoxes)

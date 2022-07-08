@@ -18,6 +18,5 @@ public class SelectFirstBox : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         other.tag = "First";
-        print("first");
     }
 }
